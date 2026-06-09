@@ -1,131 +1,131 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace HospitalManagementSystem
-{
-        abstract class SchoolMember
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
+//namespace HospitalManagementSystem
+//{
+//        abstract class SchoolMember
+//        {
+//            public int Id { get; set; }
+//            public string Name { get; set; }
 
-            public SchoolMember(int id, string name)
-            {
-                Id = id;
-                Name = name;
-            }
+//            public SchoolMember(int id, string name)
+//            {
+//                Id = id;
+//                Name = name;
+//            }
 
-            public abstract void DisplayDetails();
-        }
+//            public abstract void DisplayDetails();
+//        }
 
        
-        interface ITeacher
-        {
-            void Teach();
-        }
+//        interface ITeacher
+//        {
+//            void Teach();
+//        }
 
         
-        class Student : SchoolMember
-        {
+//        class Student : SchoolMember
+//        {
             
-            private double marks;
+//            private double marks;
 
-            public double Marks
-            {
-                get { return marks; }
-                set { marks = value; }
-            }
+//            public double Marks
+//            {
+//                get { return marks; }
+//                set { marks = value; }
+//            }
 
-            public string Grade { get; set; }
+//            public string Grade { get; set; }
 
-            public Student(int id, string name, double marks, string grade)
-                : base(id, name)
-            {
-                Marks = marks;
-                Grade = grade;
-            }
-
-           
-            public override void DisplayDetails()
-            {
-                Console.WriteLine("Student Details");
-                Console.WriteLine("---------------");
-                Console.WriteLine("Student Id : " + Id);
-                Console.WriteLine("Student Name : " + Name);
-                Console.WriteLine("Marks : " + Marks);
-                Console.WriteLine("Grade : " + Grade);
-            }
-        }
-
-        class Teacher : SchoolMember, ITeacher
-        {
-            public string Subject { get; set; }
-
-            public Teacher(int id, string name, string subject)
-                : base(id, name)
-            {
-                Subject = subject;
-            }
-
-            public void Teach()
-            {
-                Console.WriteLine(Name + " is teaching " + Subject);
-            }
+//            public Student(int id, string name, double marks, string grade)
+//                : base(id, name)
+//            {
+//                Marks = marks;
+//                Grade = grade;
+//            }
 
            
-            public override void DisplayDetails()
-            {
-                Console.WriteLine("Teacher Details");
-                Console.WriteLine("---------------");
-                Console.WriteLine("Teacher Id : " + Id);
-                Console.WriteLine("Teacher Name : " + Name);
-                Console.WriteLine("Subject : " + Subject);
-            }
-        }
+//            public override void DisplayDetails()
+//            {
+//                Console.WriteLine("Student Details");
+//                Console.WriteLine("---------------");
+//                Console.WriteLine("Student Id : " + Id);
+//                Console.WriteLine("Student Name : " + Name);
+//                Console.WriteLine("Marks : " + Marks);
+//                Console.WriteLine("Grade : " + Grade);
+//            }
+//        }
 
-        class Fee
-        {
-            public int FeeId { get; set; }
-            public double Amount { get; set; }
+//        class Teacher : SchoolMember, ITeacher
+//        {
+//            public string Subject { get; set; }
 
-            public Fee(int feeId, double amount)
-            {
-                FeeId = feeId;
-                Amount = amount;
-            }
+//            public Teacher(int id, string name, string subject)
+//                : base(id, name)
+//            {
+//                Subject = subject;
+//            }
 
-            public void PayFee()
-            {
-                Console.WriteLine("Fee Payment Details");
-                Console.WriteLine("---------------");
-                Console.WriteLine("Fee Id : " + FeeId);
-                Console.WriteLine("Amount Paid : " + Amount);
-            }
-        }
+//            public void Teach()
+//            {
+//                Console.WriteLine(Name + " is teaching " + Subject);
+//            }
 
-        internal class SchoolManagement
-        {
-            static void Main(string[] args)
-            {
-                Student s = new Student(101, "Ravi", 85, "A");
+           
+//            public override void DisplayDetails()
+//            {
+//                Console.WriteLine("Teacher Details");
+//                Console.WriteLine("---------------");
+//                Console.WriteLine("Teacher Id : " + Id);
+//                Console.WriteLine("Teacher Name : " + Name);
+//                Console.WriteLine("Subject : " + Subject);
+//            }
+//        }
 
-                Teacher t = new Teacher(201, "Kumar", "Mathematics");
+//        class Fee
+//        {
+//            public int FeeId { get; set; }
+//            public double Amount { get; set; }
 
-                Fee f = new Fee(1, 5000);
+//            public Fee(int feeId, double amount)
+//            {
+//                FeeId = feeId;
+//                Amount = amount;
+//            }
 
-                s.DisplayDetails();
+//            public void PayFee()
+//            {
+//                Console.WriteLine("Fee Payment Details");
+//                Console.WriteLine("---------------");
+//                Console.WriteLine("Fee Id : " + FeeId);
+//                Console.WriteLine("Amount Paid : " + Amount);
+//            }
+//        }
 
-                t.DisplayDetails();
+//        internal class SchoolManagement
+//        {
+//            static void Main(string[] args)
+//            {
+//                Student s = new Student(101, "Ravi", 85, "A");
 
-                t.Teach();
+//                Teacher t = new Teacher(201, "Kumar", "Mathematics");
 
-                f.PayFee();
+//                Fee f = new Fee(1, 5000);
 
-                Console.ReadLine();
-            }
-        }
+//                s.DisplayDetails();
+
+//                t.DisplayDetails();
+
+//                t.Teach();
+
+//                f.PayFee();
+
+//                Console.ReadLine();
+//            }
+//        }
     
   
-}
+//}

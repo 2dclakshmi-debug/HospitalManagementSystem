@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="stuentDetails.cs" />
+    <Compile Include="PassingParameterMechanism.cs" />
     <Compile Include="SchoolManagement.cs" />
     <Compile Include="HMS1.cs" />
     <Compile Include="HMS.cs" />
