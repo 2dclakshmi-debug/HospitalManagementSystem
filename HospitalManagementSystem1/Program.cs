@@ -44,15 +44,26 @@ namespace HospitalManagementSystem1
             Console.WriteLine("Patient disease : " + Disease);
             Console.WriteLine("Patient Address : " + Add);
         }
+   
         public override void Hdisplay()
         {
+            id = 1231;
+            name = "RainBow";
             Console.WriteLine("Hospital id : " + id);
             Console.WriteLine("Hospital name : " + name);
         }
     }
+    public class Bloodgrp
+    {
+        public string Blood(string Bloodgroup)
+        {
+            return Bloodgroup;
+        }
+    }
+    public delegate string Mydelegate(string Bloodgroup);
     interface IDoctor
     {
-        void Doctordisplay<T, K>(T a, K b);
+        void Doctordisplay<T, K,L>(T a, K b, L c);
 
     }
     class Appointment : Patient, IDoctor
@@ -74,10 +85,11 @@ namespace HospitalManagementSystem1
             Console.WriteLine("Hospital id : " + id);
             Console.WriteLine("Hospital name : " + name);
         }
-        public void Doctordisplay<T, K>(T a, K b)
+        public void Doctordisplay<T, K,L>(T a, K b,L c)
         {
-            Console.WriteLine("doctor name : " + a);
-            Console.WriteLine("specialization : " + b);
+            Console.WriteLine("Doctor id : " + a);
+            Console.WriteLine("doctor name : " + b);
+            Console.WriteLine("specialization : " + c);
         }
     }
     sealed class Bill
@@ -134,10 +146,12 @@ namespace HospitalManagementSystem1
                     Console.WriteLine("Hospital Details");
                     Console.WriteLine("----------------");
                     p.Hdisplay();
+                    Bloodgrp bg=new Bloodgrp();
+                    Console.WriteLine("blood group : " + bg.Blood("B+"));
                     Appointment app = new Appointment("11 am", "hearrtpain", "Hyd", 121, "Ravi");
                     app.AppDisplay();
-                    app.Hdisplay();
-                    app.Doctordisplay<int, string>(111, "Aravind");
+                
+                    app.Doctordisplay<int, string,string>(111, "Aravind","Cordiologist");
                     Bill bill = new Bill(12, 500, "IN");
                     Console.WriteLine("Total Bill");
                     Console.WriteLine("----------");
